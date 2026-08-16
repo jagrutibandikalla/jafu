@@ -1,0 +1,259 @@
+@import "tailwindcss" source(none);
+@source "../src";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/*
+ * Design system — "Jafu" luxury editorial memory museum.
+ * Warm ivory, champagne, dusty rose, burgundy, soft gold, warm brown ink.
+ * All colors are oklch semantic tokens. Never hardcode colors in components.
+ */
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --radius-2xl: calc(var(--radius) + 8px);
+  --radius-3xl: calc(var(--radius) + 12px);
+  --radius-4xl: calc(var(--radius) + 16px);
+
+  --font-serif: "Cormorant Garamond", ui-serif, Georgia, serif;
+  --font-sans: "Jost", ui-sans-serif, system-ui, sans-serif;
+  --font-script: "Dancing Script", cursive;
+
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-ring-offset-background: var(--background);
+
+  --color-ivory: var(--ivory);
+  --color-champagne: var(--champagne);
+  --color-beige: var(--beige);
+  --color-blush: var(--blush);
+  --color-rose: var(--rose);
+  --color-burgundy: var(--burgundy);
+  --color-gold: var(--gold);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ondark: var(--ondark);
+}
+
+:root {
+  --radius: 0.25rem;
+
+  --ivory: oklch(0.976 0.011 84);
+  --champagne: oklch(0.929 0.03 84);
+  --beige: oklch(0.9 0.026 74);
+  --blush: oklch(0.902 0.031 30);
+  --rose: oklch(0.762 0.058 24);
+  --burgundy: oklch(0.36 0.099 20);
+  --gold: oklch(0.762 0.086 82);
+  --ink: oklch(0.318 0.043 48);
+  --ink-soft: oklch(0.508 0.033 48);
+  --ondark: oklch(0.98 0.008 84);
+
+  --background: var(--ivory);
+  --foreground: var(--ink);
+  --card: oklch(0.988 0.008 84);
+  --card-foreground: var(--ink);
+  --popover: oklch(0.988 0.008 84);
+  --popover-foreground: var(--ink);
+  --primary: var(--burgundy);
+  --primary-foreground: var(--ondark);
+  --secondary: var(--champagne);
+  --secondary-foreground: var(--ink);
+  --muted: oklch(0.955 0.014 80);
+  --muted-foreground: var(--ink-soft);
+  --accent: var(--blush);
+  --accent-foreground: var(--ink);
+  --destructive: oklch(0.51 0.16 25);
+  --destructive-foreground: var(--ondark);
+  --border: oklch(0.878 0.024 78);
+  --input: oklch(0.878 0.024 78);
+  --ring: var(--gold);
+
+  --gradient-veil: linear-gradient(
+    to bottom,
+    oklch(0.24 0.03 40 / 0.55),
+    oklch(0.24 0.03 40 / 0.2) 40%,
+    oklch(0.24 0.03 40 / 0.72)
+  );
+  --gradient-champagne: linear-gradient(
+    145deg,
+    oklch(0.976 0.011 84) 0%,
+    oklch(0.94 0.028 74) 45%,
+    oklch(0.912 0.03 28) 100%
+  );
+  --gradient-gold: linear-gradient(
+    100deg,
+    oklch(0.82 0.06 84),
+    oklch(0.72 0.1 72),
+    oklch(0.86 0.05 88)
+  );
+  --shadow-soft: 0 24px 70px -30px oklch(0.36 0.06 40 / 0.35);
+  --shadow-lift: 0 40px 110px -40px oklch(0.36 0.08 30 / 0.45);
+  --ease-silk: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@layer base {
+  * {
+    border-color: var(--color-border);
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  body {
+    background-color: var(--color-background);
+    color: var(--color-foreground);
+    font-family: var(--font-sans);
+    font-weight: 300;
+    letter-spacing: 0.01em;
+    overflow-x: hidden;
+  }
+
+  ::selection {
+    background: var(--color-blush);
+    color: var(--color-burgundy);
+  }
+}
+
+@utility font-display {
+  font-family: var(--font-serif);
+  font-weight: 300;
+  letter-spacing: -0.01em;
+}
+
+@utility text-eyebrow {
+  font-family: var(--font-sans);
+  font-size: 0.6875rem;
+  font-weight: 400;
+  letter-spacing: 0.34em;
+  text-transform: uppercase;
+  color: var(--color-ink-soft);
+}
+
+@utility rule-gold {
+  background: var(--gradient-gold);
+  height: 1px;
+  width: 100%;
+  opacity: 0.7;
+}
+
+@utility glass-panel {
+  background: oklch(1 0 0 / 0.42);
+  backdrop-filter: blur(22px) saturate(130%);
+  border: 1px solid oklch(0.82 0.05 84 / 0.5);
+  box-shadow: var(--shadow-soft);
+}
+
+@utility grain {
+  position: relative;
+}
+
+@utility grain-overlay {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0.16;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='140' height='140' filter='url(%23n)' opacity='0.55'/%3E%3C/svg%3E");
+}
+
+@keyframes slow-zoom {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.16);
+  }
+}
+
+@keyframes drift {
+  0% {
+    transform: translate3d(0, 0, 0);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(14px, -120px, 0);
+    opacity: 0;
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  15% {
+    transform: scale(1.16);
+  }
+  30% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes scroll-hint {
+  0%,
+  100% {
+    transform: translateY(0);
+    opacity: 0.5;
+  }
+  50% {
+    transform: translateY(8px);
+    opacity: 1;
+  }
+}
+
+@utility animate-slow-zoom {
+  animation: slow-zoom 26s var(--ease-silk) forwards;
+}
+
+@utility animate-drift {
+  animation: drift linear infinite;
+}
+
+@utility animate-heartbeat {
+  animation: heartbeat 2.6s ease-in-out infinite;
+}
+
+@utility animate-scroll-hint {
+  animation: scroll-hint 2.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}
