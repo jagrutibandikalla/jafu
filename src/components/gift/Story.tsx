@@ -18,15 +18,40 @@ function ChapterItem({ chapter, index }: { chapter: ChapterData; index: number }
           <h3 className="font-display mt-5 text-[1.75rem] leading-[1.2] text-ink sm:text-4xl">
             {chapter.title}
           </h3>
-          {chapter.quote && (
-            <p className="font-display mt-6 text-xl italic text-primary sm:text-2xl">
-              “{chapter.quote}”
+          {chapter.subtitle && (
+            <p className="mt-2 text-xs uppercase tracking-[0.25em] text-primary/80 font-medium">
+              {chapter.subtitle}
             </p>
           )}
-          <div className="rule-gold my-7 w-16" />
-          <p className="max-w-sm text-[0.93rem] leading-[1.9] text-muted-foreground">
-            {chapter.body}
-          </p>
+          {(chapter.quote || chapter.pullQuote) && (
+            <p className="font-display mt-5 text-xl italic text-primary sm:text-2xl">
+              “{chapter.quote || chapter.pullQuote}”
+            </p>
+          )}
+          <div className="rule-gold my-6 w-16" />
+          {chapter.leadText && (
+            <p className="mb-4 max-w-md text-[0.96rem] font-medium leading-[1.85] text-ink/90">
+              {chapter.leadText}
+            </p>
+          )}
+          {chapter.bodyParagraphs && chapter.bodyParagraphs.length > 0 ? (
+            chapter.bodyParagraphs.map((para, pIdx) => (
+              <p key={pIdx} className="mb-4 max-w-md text-[0.93rem] leading-[1.9] text-muted-foreground">
+                {para}
+              </p>
+            ))
+          ) : (
+            chapter.body && (
+              <p className="max-w-md text-[0.93rem] leading-[1.9] text-muted-foreground">
+                {chapter.body}
+              </p>
+            )
+          )}
+          {chapter.accentNote && (
+            <p className="mt-4 text-xs italic text-muted-foreground/70">
+              ✦ {chapter.accentNote}
+            </p>
+          )}
         </Reveal>
       </div>
 

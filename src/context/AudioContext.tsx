@@ -66,26 +66,28 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     };
   }, [songSrc]);
 
-  // Auto-play trigger on first user gesture anywhere on page
+  // Auto-play trigger on any user gesture anywhere on page
   useEffect(() => {
-    if (typeof window === "undefined") return;
+    if (typeof window === "undefined" || hasStartedOnce) return;
 
-    const handleFirstGesture = () => {
-      if (!hasStartedOnce && audioRef.current && audioRef.current.paused) {
+    const handleGesture = () => {
+      if (!hasStartedOnce && audioRef.current) {
         playSoftly();
       }
     };
 
-    window.addEventListener("click", handleFirstGesture, { once: true });
-    window.addEventListener("touchstart", handleFirstGesture, { once: true });
-    window.addEventListener("scroll", handleFirstGesture, { once: true });
-    window.addEventListener("keydown", handleFirstGesture, { once: true });
+    window.addEventListener("click", handleGesture);
+    window.addEventListener("touchstart", handleGesture);
+    window.addEventListener("pointerdown", handleGesture);
+    window.addEventListener("scroll", handleGesture);
+    window.addEventListener("keydown", handleGesture);
 
     return () => {
-      window.removeEventListener("click", handleFirstGesture);
-      window.removeEventListener("touchstart", handleFirstGesture);
-      window.removeEventListener("scroll", handleFirstGesture);
-      window.removeEventListener("keydown", handleFirstGesture);
+      window.removeEventListener("click", handleGesture);
+      window.removeEventListener("touchstart", handleGesture);
+      window.removeEventListener("pointerdown", handleGesture);
+      window.removeEventListener("scroll", handleGesture);
+      window.removeEventListener("keydown", handleGesture);
     };
   }, [hasStartedOnce]);
 
