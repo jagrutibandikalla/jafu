@@ -33,7 +33,7 @@ export function Letter() {
             >
               <Reveal y={40}>
                 <div
-                  className="relative overflow-hidden"
+                  className="relative overflow-hidden rounded-2xl bg-[#FAF6F0] p-4 sm:p-8 flex items-center justify-center border border-gold/30"
                   style={{ boxShadow: "var(--shadow-lift)" }}
                 >
                   <img
@@ -41,12 +41,12 @@ export function Letter() {
                     alt={artwork.alt || "A sealed envelope with a wax seal"}
                     loading="lazy"
                     style={{
-                      objectFit: artwork.fit || "cover",
+                      objectFit: artwork.fit || "contain",
                       objectPosition: `${artwork.positionX ?? 50}% ${artwork.positionY ?? 50}%`,
                     }}
-                    className="aspect-[7/5] w-full"
+                    className="max-h-[28rem] sm:max-h-[34rem] w-auto mx-auto object-contain rounded-xl transition-transform duration-700 hover:scale-[1.02]"
                   />
-                  <div className="grain-overlay absolute inset-0" />
+                  <div className="grain-overlay absolute inset-0 rounded-2xl" />
                 </div>
                 <p className="font-display mx-auto mt-10 max-w-lg text-center text-xl italic leading-relaxed text-ink sm:text-2xl">
                   “There are some people you don't just meet.

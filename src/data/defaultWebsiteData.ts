@@ -265,6 +265,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Same floor. Same afternoon. Endless games.",
       date: "6th Standard",
+      note: "From 6th standard corridor games to forever.",
       category: "Childhood",
     },
     {
@@ -278,6 +279,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "The balcony where we solved all the world's problems.",
       date: "Childhood",
+      note: "Living on the same floor made growing up so sweet.",
       category: "Apartment",
     },
     {
@@ -291,6 +293,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Just another ordinary day that became a memory.",
       date: "School",
+      note: "Even ordinary school days were bright with you.",
       category: "School",
     },
     {
@@ -318,6 +321,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Miles apart, but never distant.",
       date: "Present",
+      note: "No matter how many miles apart, we pick up mid-sentence.",
       category: "Recent",
     },
     {
@@ -331,6 +335,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "The little things that will always mean us.",
       date: "Always",
+      note: "It's always the smallest moments that mean the most.",
       category: "Favorites",
     },
     {
@@ -344,6 +349,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "To the person who makes everything feel a little calmer.",
       date: "Today",
+      note: "Your calm presence makes every heavy day lighter.",
       category: "Recent",
     },
     {
@@ -357,6 +363,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Boat rides, quiet water, and peaceful moments.",
       date: "Recent",
+      note: "Peaceful water, gentle breeze, and good company.",
       category: "Recent",
     },
     {
@@ -370,6 +377,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Dressed up, glowing, and being her gorgeous self.",
       date: "Celebrations",
+      note: "Dressed up for celebrations, glowing inside and out.",
       category: "Favorites",
     },
     {
@@ -383,6 +391,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       caption: "Hugs that make everything feel alright.",
       date: "Always",
+      note: "A hug that makes you feel completely safe.",
       category: "Favorites",
     },
   ],

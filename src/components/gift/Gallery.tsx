@@ -93,8 +93,9 @@ export function Gallery() {
                   </span>
                 )}
                 {p.caption && p.shape !== "polaroid" && (
-                  <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-primary/70 to-transparent px-5 pb-5 pt-14 text-left font-display text-base italic text-ondark opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
-                    {p.caption}
+                  <span className="pointer-events-none absolute inset-x-0 bottom-0 translate-y-3 bg-gradient-to-t from-primary/85 via-primary/50 to-transparent px-5 pb-5 pt-14 text-left opacity-0 transition-all duration-700 group-hover:translate-y-0 group-hover:opacity-100">
+                    <span className="font-display block text-base italic text-ondark">{p.caption}</span>
+                    {p.note && <span className="block mt-1 text-[0.75rem] font-light tracking-wide text-ondark/85">✦ {p.note}</span>}
                   </span>
                 )}
               </button>
