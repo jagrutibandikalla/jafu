@@ -58,26 +58,37 @@ function ChapterItem({ chapter, index }: { chapter: ChapterData; index: number }
       <div className={`md:col-span-6 ${flip ? "md:order-1 md:col-start-1" : "md:col-start-7"} space-y-6 md:sticky md:top-28 md:self-start`}>
         {chapter.photos.map((p) => (
           <Reveal key={p.id} y={44}>
-            <div className="relative overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
-              <motion.img
-                style={{
-                  y,
-                  objectFit: p.fit || "cover",
-                  objectPosition: `${p.positionX ?? 50}% ${p.positionY ?? 50}%`,
-                  transform: `scale(${(p.zoom ?? 100) / 100})`,
-                }}
-                src={p.src}
-                alt={p.alt || chapter.title}
-                loading="lazy"
-                className={`w-full ${
-                  p.shape === "landscape"
-                    ? "aspect-[3/2]"
-                    : p.shape === "square"
-                      ? "aspect-square"
-                      : "aspect-[4/5]"
-                }`}
-              />
-              <div className="grain-overlay absolute inset-0" />
+            <div className="group relative block w-full text-left bg-white dark:bg-stone-900 p-4 sm:p-5 pb-7 sm:pb-8 rounded-sm border border-stone-200/80 dark:border-stone-800 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.02] rotate-1">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-amber-100/80 dark:bg-amber-950/40 backdrop-blur-[1px] border border-amber-200/60 rotate-[-1deg] shadow-[0_1px_3px_rgba(0,0,0,0.08)] z-10 pointer-events-none rounded-[1px]" />
+              <div className="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-800 rounded-[2px] border border-stone-200/50">
+                <motion.img
+                  style={{
+                    y,
+                    objectFit: p.fit || "cover",
+                    objectPosition: `${p.positionX ?? 50}% ${p.positionY ?? 50}%`,
+                    transform: `scale(${(p.zoom ?? 100) / 100})`,
+                  }}
+                  src={p.src}
+                  alt={p.alt || chapter.title}
+                  loading="lazy"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="grain-overlay absolute inset-0" />
+              </div>
+              {(p.caption || p.date) && (
+                <div className="mt-3.5 flex flex-col items-center text-center px-1">
+                  {p.date && (
+                    <span className="text-[0.62rem] uppercase tracking-[0.25em] font-mono text-stone-400 dark:text-stone-500 mb-1">
+                      {p.date}
+                    </span>
+                  )}
+                  {p.caption && (
+                    <span className="font-script text-lg sm:text-xl text-stone-800 dark:text-stone-100 leading-snug font-bold">
+                      {p.caption}
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
           </Reveal>
         ))}

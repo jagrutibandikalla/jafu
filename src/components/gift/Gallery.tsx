@@ -62,14 +62,14 @@ export function Gallery() {
           <div className="rule-gold mt-8 w-24" />
         </Reveal>
 
-        <div className="grid grid-cols-1 gap-7 sm:grid-cols-2 lg:grid-cols-3 md:gap-9">
+        <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-3 md:gap-10">
           {gallery.map((p, i) => {
             const rotationClass = [
               "-rotate-1 hover:rotate-0",
               "rotate-1 hover:rotate-0",
               "-rotate-2 hover:rotate-0",
               "rotate-2 hover:rotate-0",
-              "-rotate-1 hover:rotate-0",
+              "-rotate-1.5 hover:rotate-0",
             ][i % 5];
 
             return (
@@ -77,14 +77,14 @@ export function Gallery() {
                 <button
                   onClick={() => setActive(i)}
                   aria-label={p.caption ?? p.alt ?? "Gallery photo"}
-                  className={`group relative block w-full text-left bg-card p-3.5 sm:p-4 pb-6 sm:pb-7 rounded-sm border border-stone-200/60 transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:z-20 ${rotationClass}`}
+                  className={`group relative block w-full text-left bg-white dark:bg-stone-900 p-4 sm:p-5 pb-8 sm:pb-9 rounded-sm border border-stone-200/80 dark:border-stone-800 shadow-md transition-all duration-500 hover:shadow-2xl hover:scale-[1.03] hover:z-20 ${rotationClass}`}
                   style={{ boxShadow: "var(--shadow-soft)" }}
                 >
-                  {/* Vintage Tape Accent */}
-                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-amber-100/75 dark:bg-amber-950/40 backdrop-blur-[1px] border border-amber-200/60 rotate-[-1deg] shadow-[0_1px_3px_rgba(0,0,0,0.08)] z-10 pointer-events-none rounded-[1px]" />
+                  {/* Vintage Washi Tape Accent */}
+                  <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-amber-100/80 dark:bg-amber-950/40 backdrop-blur-[1px] border border-amber-200/60 rotate-[-1deg] shadow-[0_1px_3px_rgba(0,0,0,0.08)] z-10 pointer-events-none rounded-[1px]" />
 
-                  {/* Photo Frame Container */}
-                  <div className="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-900 rounded-sm">
+                  {/* Photo Frame Container (Thick white border surrounding image inside Polaroid) */}
+                  <div className="relative overflow-hidden aspect-[4/5] bg-stone-100 dark:bg-stone-800 rounded-[2px] border border-stone-200/50">
                     <img
                       src={p.src}
                       alt={p.alt || "Memory"}
@@ -99,22 +99,22 @@ export function Gallery() {
                     <div className="grain-overlay absolute inset-0" />
                   </div>
 
-                  {/* Polaroid Frame Bottom Content (Caption & Note) */}
-                  <div className="mt-3.5 flex flex-col items-center text-center px-1">
+                  {/* Polaroid Frame Bottom Content (Caption & Note on wide white border) */}
+                  <div className="mt-4 flex flex-col items-center text-center px-1">
                     {p.date && (
-                      <span className="text-[0.62rem] uppercase tracking-[0.25em] font-mono text-muted-foreground/70 mb-1">
+                      <span className="text-[0.62rem] uppercase tracking-[0.25em] font-mono text-stone-400 dark:text-stone-500 mb-1">
                         {p.date}
                       </span>
                     )}
 
                     {p.caption && (
-                      <span className="font-script text-lg sm:text-xl text-ink leading-snug font-medium">
+                      <span className="font-script text-xl sm:text-2xl text-stone-800 dark:text-stone-100 leading-snug font-bold">
                         {p.caption}
                       </span>
                     )}
 
                     {p.note && (
-                      <span className="mt-2 text-xs sm:text-sm italic font-serif text-muted-foreground/90 leading-relaxed border-t border-border/40 pt-2 w-full block">
+                      <span className="mt-2.5 text-xs sm:text-sm italic font-serif text-stone-600 dark:text-stone-300 leading-relaxed border-t border-stone-200/80 dark:border-stone-800 pt-2.5 w-full block">
                         ✦ {p.note}
                       </span>
                     )}

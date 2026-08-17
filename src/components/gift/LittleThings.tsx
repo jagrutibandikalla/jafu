@@ -22,19 +22,22 @@ export function LittleThings() {
           </Reveal>
 
           <Reveal y={40}>
-            <div className="relative overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
-              <img
-                src={heroPhoto.src}
-                alt={heroPhoto.alt || "A diary, polaroids and chai on ivory linen"}
-                loading="lazy"
-                style={{
-                  objectFit: heroPhoto.fit || "cover",
-                  objectPosition: `${heroPhoto.positionX ?? 50}% ${heroPhoto.positionY ?? 50}%`,
-                  transform: `scale(${(heroPhoto.zoom ?? 100) / 100})`,
-                }}
-                className="aspect-[3/2] w-full"
-              />
-              <div className="grain-overlay absolute inset-0" />
+            <div className="group relative block w-full text-left bg-white dark:bg-stone-900 p-4 sm:p-5 pb-7 sm:pb-8 rounded-sm border border-stone-200/80 dark:border-stone-800 shadow-md -rotate-1">
+              <div className="absolute -top-3 left-1/2 -translate-x-1/2 w-14 h-4 bg-amber-100/80 dark:bg-amber-950/40 backdrop-blur-[1px] border border-amber-200/60 rotate-[1deg] shadow-[0_1px_3px_rgba(0,0,0,0.08)] z-10 pointer-events-none rounded-[1px]" />
+              <div className="relative overflow-hidden aspect-[3/2] bg-stone-100 dark:bg-stone-800 rounded-[2px] border border-stone-200/50">
+                <img
+                  src={heroPhoto.src}
+                  alt={heroPhoto.alt || "A diary, polaroids and chai on ivory linen"}
+                  loading="lazy"
+                  style={{
+                    objectFit: heroPhoto.fit || "cover",
+                    objectPosition: `${heroPhoto.positionX ?? 50}% ${heroPhoto.positionY ?? 50}%`,
+                    transform: `scale(${(heroPhoto.zoom ?? 100) / 100})`,
+                  }}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="grain-overlay absolute inset-0" />
+              </div>
             </div>
           </Reveal>
         </div>
