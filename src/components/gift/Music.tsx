@@ -1,5 +1,5 @@
 import { motion } from "motion/react";
-import { Pause, Play, Volume2 } from "lucide-react";
+import { Pause, Play, Volume2, Volume1, VolumeX } from "lucide-react";
 import { useWebsiteData } from "@/context/WebsiteDataContext";
 import { useAudioPlayer } from "@/context/AudioContext";
 import { defaultWebsiteData } from "@/data/defaultWebsiteData";
@@ -28,6 +28,7 @@ export function Music() {
     isAutoplayBlocked,
     togglePlay,
     setVolume,
+    toggleMute,
     seek,
   } = useAudioPlayer();
 
@@ -127,9 +128,22 @@ export function Music() {
                 </div>
               </div>
 
-              {/* Volume Slider */}
+              {/* Volume Slider & Toggle */}
               <div className="mt-5 flex items-center gap-3">
-                <Volume2 className="h-4 w-4 text-muted-foreground" strokeWidth={1.2} />
+                <button
+                  type="button"
+                  onClick={() => toggleMute()}
+                  aria-label={volume === 0 ? "Unmute volume" : "Mute volume"}
+                  className="flex items-center justify-center p-1 rounded-md text-muted-foreground hover:text-ink transition-colors focus:outline-none focus-visible:ring-1 focus-visible:ring-primary"
+                >
+                  {volume === 0 ? (
+                    <VolumeX className="h-4 w-4 text-primary" strokeWidth={1.4} />
+                  ) : volume < 0.5 ? (
+                    <Volume1 className="h-4 w-4 text-muted-foreground hover:text-ink" strokeWidth={1.4} />
+                  ) : (
+                    <Volume2 className="h-4 w-4 text-muted-foreground hover:text-ink" strokeWidth={1.4} />
+                  )}
+                </button>
                 <input
                   type="range"
                   aria-label="Volume"
@@ -157,3 +171,4 @@ export function Music() {
     </section>
   );
 }
+

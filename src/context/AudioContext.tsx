@@ -11,6 +11,7 @@ interface AudioContextType {
   playSoftly: () => Promise<void>;
   togglePlay: () => Promise<void>;
   setVolume: (v: number) => void;
+  toggleMute: () => void;
   seek: (t: number) => void;
 }
 
@@ -23,6 +24,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const fadeIntervalRef = useRef<NodeJS.Timeout | null>(null);
+  const lastNonZeroVolumeRef = useRef<number>(0.8);
 
   const [isPlaying, setIsPlaying] = useState(false);
   const [currentTime, setCurrentTime] = useState(0);
@@ -36,6 +38,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     if (typeof window === "undefined") return;
     const audio = new Audio();
     audio.preload = "auto";
+    audio.loop = true;
     audio.src = songSrc;
 
     audio.onloadedmetadata = () => {
@@ -47,7 +50,12 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     };
 
     audio.onended = () => {
-      setIsPlaying(false);
+      if (audio.loop) {
+        audio.currentTime = 0;
+        audio.play().catch(() => setIsPlaying(false));
+      } else {
+        setIsPlaying(false);
+      }
     };
 
     audio.onerror = () => {
@@ -93,9 +101,26 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 
   // Keep volume synced
   const setVolume = (v: number) => {
+    if (fadeIntervalRef.current) {
+      clearInterval(fadeIntervalRef.current);
+      fadeIntervalRef.current = null;
+    }
+    if (v > 0) {
+      lastNonZeroVolumeRef.current = v;
+    }
     setVolumeState(v);
     if (audioRef.current) {
       audioRef.current.volume = v;
+    }
+  };
+
+  const toggleMute = () => {
+    if (volume > 0) {
+      lastNonZeroVolumeRef.current = volume;
+      setVolume(0);
+    } else {
+      const restored = lastNonZeroVolumeRef.current > 0 ? lastNonZeroVolumeRef.current : 0.8;
+      setVolume(restored);
     }
   };
 
@@ -109,6 +134,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     }
 
     try {
+      audio.loop = true;
       audio.currentTime = 0;
       audio.volume = 0;
       setVolumeState(0);
@@ -122,8 +148,8 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
       setIsAutoplayBlocked(false);
       setHasStartedOnce(true);
 
-      // Smooth volume fade-in from 0 to 0.8 over 1.8 seconds
-      const targetVolume = 0.8;
+      // Smooth volume fade-in from 0 to target volume over 1.8 seconds
+      const targetVolume = lastNonZeroVolumeRef.current > 0 ? lastNonZeroVolumeRef.current : 0.8;
       const durationMs = 1800;
       const stepMs = 60;
       const increment = targetVolume / (durationMs / stepMs);
@@ -137,7 +163,10 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         setVolumeState(currentVol);
 
         if (currentVol >= targetVolume) {
-          if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
+          if (fadeIntervalRef.current) {
+            clearInterval(fadeIntervalRef.current);
+            fadeIntervalRef.current = null;
+          }
         }
       }, stepMs);
     } catch (err) {
@@ -152,11 +181,15 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
     if (!audio) return;
 
     if (isPlaying) {
-      if (fadeIntervalRef.current) clearInterval(fadeIntervalRef.current);
+      if (fadeIntervalRef.current) {
+        clearInterval(fadeIntervalRef.current);
+        fadeIntervalRef.current = null;
+      }
       audio.pause();
       setIsPlaying(false);
     } else {
       try {
+        audio.loop = true;
         if (audio.volume < 0.1) {
           audio.volume = volume > 0 ? volume : 0.8;
         }
@@ -191,6 +224,7 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
         playSoftly,
         togglePlay,
         setVolume,
+        toggleMute,
         seek,
       }}
     >
@@ -225,6 +259,7 @@ export function useAudioPlayer() {
       playSoftly: async () => {},
       togglePlay: async () => {},
       setVolume: () => {},
+      toggleMute: () => {},
       seek: () => {},
     };
   }
