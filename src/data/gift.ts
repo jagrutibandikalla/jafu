@@ -1,18 +1,3 @@
-/**
- * ─────────────────────────────────────────────────────────────
- *  EVERYTHING EDITABLE LIVES HERE.
- *
- *  To swap a photo:
- *    1. Drop your image into  src/assets/   (e.g. src/assets/hostel-3.jpg)
- *    2. Add an import at the top of this file
- *    3. Use it in the relevant place below
- *
- *  To add a song:
- *    Put the file in  public/audio/song.mp3
- *    and update `song` below (src path + title/artist).
- * ─────────────────────────────────────────────────────────────
- */
-
 import hero from "@/assets/memories/hero/hero.jpg";
 import childhood1 from "@/assets/memories/childhood/childhood-1.jpg";
 import childhood2 from "@/assets/memories/childhood/childhood-2.jpg";
@@ -23,6 +8,10 @@ import recent2 from "@/assets/memories/long-distance/recent-2.jpg";
 import littleThings from "@/assets/memories/little-things/little-things.jpg";
 import letterArt from "@/assets/memories/letter/letter.jpg";
 import songArt from "@/assets/memories/music/song-art.jpg";
+import chapter6 from "@/assets/memories/long-distance/chapter-6.jpg";
+import gallery1 from "@/assets/memories/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/memories/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/memories/gallery/gallery-3.jpg";
 
 export const images = {
   hero,
@@ -35,6 +24,10 @@ export const images = {
   littleThings,
   letterArt,
   songArt,
+  chapter6,
+  gallery1,
+  gallery2,
+  gallery3,
 };
 
 export const birthday = { month: 8, day: 18, year: 2005 };
@@ -58,42 +51,42 @@ export const chapters: {
 }[] = [
   {
     number: "Chapter 01",
-    title: "6th Standard",
-    quote: "And somehow, you became my person.",
-    body: "A new class, a new bench, a new year — and one girl who felt familiar before I even knew her properly. Neither of us planned it. It simply happened, the way the best things do.",
+    title: "The Apartment Floor",
+    quote: "We didn't know we were making memories. We were just playing after school.",
+    body: "We lived on the same floor. Same staircase, same afternoon shadows, same routine of running out the door the moment homework was done. Half of my childhood memories are just you standing in them.",
     photos: [
-      { src: childhood1, alt: "Two little girls playing on an apartment floor", shape: "portrait" },
+      { src: childhood2, alt: "Same floor. Same afternoon.", shape: "portrait" },
     ],
   },
   {
     number: "Chapter 02",
-    title: "Same Apartment. Same Floor. Endless Days.",
-    body: "The same floor, the same staircase, the same doorbell. We played until the lights came on, talked about nothing for hours, and spent whole afternoons just being around each other. Childhood was easier because you were three steps away.",
-    photos: [{ src: childhood2, alt: "Warm apartment stairwell in afternoon light", shape: "portrait" }],
+    title: "The School Years",
+    body: "School became the backdrop to everything. Walking together, sharing tiffins, stressing over exams that feel so small now, and laughing at things no one else found funny.",
+    photos: [{ src: school1, alt: "Corridor conversations", shape: "portrait" }],
   },
   {
     number: "Chapter 03",
-    title: "Growing Up Together",
-    body: "School years, exam nights, small heartbreaks and enormous inside jokes. We grew taller, quieter, more complicated — and somehow always at the same speed.",
-    photos: [{ src: school1, alt: "Two schoolgirls walking down a sunlit corridor", shape: "landscape" }],
+    title: "The Growing Up Phase",
+    body: "Between school ending and college starting, everything was uncertain except for one thing: our evening catch-ups. We talked about big dreams, small fears, and everything in between.",
+    photos: [{ src: hostel1, alt: "Walking into the future together", shape: "landscape" }],
   },
   {
     number: "Chapter 04",
-    title: "Two Years. One Hostel. A Thousand Memories.",
-    body: "Two years of shared rooms and stolen sleep. Late-night conversations that fixed everything, midnight snacks, laughing so hard we had to whisper. A completely different chapter of us — and one of my favourites.",
-    photos: [{ src: hostel1, alt: "Cozy hostel room at night with fairy lights", shape: "landscape" }],
+    title: "The Hostel Era",
+    body: "Those two years in the hostel — I don't think I'll ever have anything quite like that again. Sharing a space, staying up way past midnight, laughing until our stomachs hurt when we were supposed to be sleeping.",
+    photos: [{ src: recent2, alt: "Hostel days. The best two years.", shape: "portrait" }],
   },
   {
     number: "Chapter 05",
-    title: "Different Places. Same Friendship.",
-    body: "Now there are cities between us and calendars that never match. But the friendship never became distant. We pick up mid-sentence, months later, like no time passed at all.",
-    photos: [{ src: recent2, alt: "Two friends holding coffee cups by a window", shape: "square" }],
+    title: "The Distance Phase",
+    body: "Now I'm in my final year, you're somewhere else, and our daily routines don't overlap the way they used to. Distance changed our location — it never touched our bond.",
+    photos: [{ src: recent1, alt: "Miles apart, but never distant.", shape: "square" }],
   },
   {
     number: "Chapter 06",
-    title: "Still Us.",
-    body: "Years changed. Places changed. We changed. But somehow, we never became strangers.",
-    photos: [{ src: recent1, alt: "Portrait of a calm young woman in warm light", shape: "portrait" }],
+    title: "Where We Are Today",
+    body: "Looking back at all these chapters, I realize how much of my life has your presence woven through it. From 6th standard corridor games to final-year phone calls — you've been a constant in the best way possible.",
+    photos: [{ src: chapter6, alt: "To many more years of this.", shape: "portrait" }],
   },
 ];
 
@@ -101,34 +94,83 @@ export const chapters: {
 export const gallery: Photo[] = [
   {
     src: childhood1,
-    alt: "Two little girls playing on the apartment floor",
-    shape: "hero",
-    caption: "Us, before we knew how quickly time would move.",
-    date: "The apartment years",
+    alt: "Jafu fixing her hair",
+    shape: "portrait",
+    caption: "Same floor. Same afternoon. Endless games.",
+    date: "6th Standard",
+    note: "From 6th standard corridor games to forever.",
   },
-  { src: childhood2, alt: "Apartment stairwell", shape: "portrait" },
+  {
+    src: childhood2,
+    alt: "Jafu fixing her hair",
+    shape: "portrait",
+    caption: "The balcony where we solved all the world's problems.",
+    date: "Childhood",
+    note: "Living on the same floor made growing up so sweet.",
+  },
   {
     src: school1,
-    alt: "School corridor",
+    alt: "Jafu & Princy dancing outdoors",
     shape: "landscape",
     caption: "Just another ordinary day that became a memory.",
     date: "School",
+    note: "Even ordinary school days were bright with you.",
   },
   {
     src: hostel1,
-    alt: "Hostel room at night",
+    alt: "Jafu & Princy hugging closely",
     shape: "polaroid",
     caption: "The kind of laughter I wish I could replay forever.",
     date: "Hostel, 2 a.m.",
     note: "Half our best conversations happened when we were supposed to be asleep.",
   },
-  { src: recent2, alt: "Coffee together", shape: "square" },
-  { src: littleThings, alt: "Diary, polaroids and chai", shape: "landscape" },
+  {
+    src: recent2,
+    alt: "Jafu & Princy hugging closely",
+    shape: "square",
+    caption: "Miles apart, but never distant.",
+    date: "Present",
+    note: "No matter how many miles apart, we pick up mid-sentence.",
+  },
+  {
+    src: littleThings,
+    alt: "Jafu & Princy dancing outdoors",
+    shape: "landscape",
+    caption: "The little things that will always mean us.",
+    date: "Always",
+    note: "It's always the smallest moments that mean the most.",
+  },
   {
     src: recent1,
-    alt: "Recent portrait",
+    alt: "Jafu & Princy dancing outdoors",
     shape: "portrait",
-    caption: "Still the calmest person I know.",
+    caption: "To the person who makes everything feel a little calmer.",
+    date: "Today",
+    note: "Your calm presence makes every heavy day lighter.",
+  },
+  {
+    src: gallery1,
+    alt: "Jafu on a boat ride by the lake",
+    shape: "portrait",
+    caption: "Boat rides, quiet water, and peaceful moments.",
+    date: "Recent",
+    note: "Peaceful water, gentle breeze, and good company.",
+  },
+  {
+    src: gallery2,
+    alt: "Jafu smiling in lehenga outdoors",
+    shape: "portrait",
+    caption: "Dressed up, glowing, and being her gorgeous self.",
+    date: "Celebrations",
+    note: "Dressed up for celebrations, glowing inside and out.",
+  },
+  {
+    src: gallery3,
+    alt: "Warm tight hug in front of green bushes",
+    shape: "square",
+    caption: "Hugs that make everything feel alright.",
+    date: "Always",
+    note: "A hug that makes you feel completely safe.",
   },
 ];
 
@@ -152,8 +194,7 @@ export const littleThingsCards = [
 ];
 
 export const song = {
-  /** Replace with your uploaded file: put it at public/audio/song.mp3 */
-  src: "/audio/song.mp3",
+  src: "/music/jafu.mp3",
   title: "A Song For You",
   artist: "For Jafu, with love",
   artwork: songArt,
