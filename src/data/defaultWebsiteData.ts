@@ -380,20 +380,6 @@ export const defaultWebsiteData: WebsiteData = {
       note: "Dressed up for celebrations, glowing inside and out.",
       category: "Favorites",
     },
-    {
-      id: "gal-10",
-      src: gallery3,
-      alt: "Warm tight hug in front of green bushes",
-      shape: "polaroid",
-      fit: "cover",
-      positionX: 50,
-      positionY: 50,
-      zoom: 100,
-      caption: "Hugs that make everything feel alright.",
-      date: "Always",
-      note: "A hug that makes you feel completely safe.",
-      category: "Favorites",
-    },
   ],
 
   thingsILove: {

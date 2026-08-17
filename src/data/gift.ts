@@ -164,14 +164,6 @@ export const gallery: Photo[] = [
     date: "Celebrations",
     note: "Dressed up for celebrations, glowing inside and out.",
   },
-  {
-    src: gallery3,
-    alt: "Warm tight hug in front of green bushes",
-    shape: "polaroid",
-    caption: "Hugs that make everything feel alright.",
-    date: "Always",
-    note: "A hug that makes you feel completely safe.",
-  },
 ];
 
 export const thingsILove = [
