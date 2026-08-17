@@ -95,7 +95,7 @@ export const gallery: Photo[] = [
   {
     src: childhood1,
     alt: "Jafu fixing her hair",
-    shape: "portrait",
+    shape: "polaroid",
     caption: "Same floor. Same afternoon. Endless games.",
     date: "6th Standard",
     note: "From 6th standard corridor games to forever.",
@@ -103,7 +103,7 @@ export const gallery: Photo[] = [
   {
     src: childhood2,
     alt: "Jafu fixing her hair",
-    shape: "portrait",
+    shape: "polaroid",
     caption: "The balcony where we solved all the world's problems.",
     date: "Childhood",
     note: "Living on the same floor made growing up so sweet.",
@@ -111,7 +111,7 @@ export const gallery: Photo[] = [
   {
     src: school1,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "landscape",
+    shape: "polaroid",
     caption: "Just another ordinary day that became a memory.",
     date: "School",
     note: "Even ordinary school days were bright with you.",
@@ -127,7 +127,7 @@ export const gallery: Photo[] = [
   {
     src: recent2,
     alt: "Jafu & Princy hugging closely",
-    shape: "square",
+    shape: "polaroid",
     caption: "Miles apart, but never distant.",
     date: "Present",
     note: "No matter how many miles apart, we pick up mid-sentence.",
@@ -135,7 +135,7 @@ export const gallery: Photo[] = [
   {
     src: littleThings,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "landscape",
+    shape: "polaroid",
     caption: "The little things that will always mean us.",
     date: "Always",
     note: "It's always the smallest moments that mean the most.",
@@ -143,7 +143,7 @@ export const gallery: Photo[] = [
   {
     src: recent1,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "portrait",
+    shape: "polaroid",
     caption: "To the person who makes everything feel a little calmer.",
     date: "Today",
     note: "Your calm presence makes every heavy day lighter.",
@@ -151,7 +151,7 @@ export const gallery: Photo[] = [
   {
     src: gallery1,
     alt: "Jafu on a boat ride by the lake",
-    shape: "portrait",
+    shape: "polaroid",
     caption: "Boat rides, quiet water, and peaceful moments.",
     date: "Recent",
     note: "Peaceful water, gentle breeze, and good company.",
@@ -159,7 +159,7 @@ export const gallery: Photo[] = [
   {
     src: gallery2,
     alt: "Jafu smiling in lehenga outdoors",
-    shape: "portrait",
+    shape: "polaroid",
     caption: "Dressed up, glowing, and being her gorgeous self.",
     date: "Celebrations",
     note: "Dressed up for celebrations, glowing inside and out.",
@@ -167,7 +167,7 @@ export const gallery: Photo[] = [
   {
     src: gallery3,
     alt: "Warm tight hug in front of green bushes",
-    shape: "square",
+    shape: "polaroid",
     caption: "Hugs that make everything feel alright.",
     date: "Always",
     note: "A hug that makes you feel completely safe.",
