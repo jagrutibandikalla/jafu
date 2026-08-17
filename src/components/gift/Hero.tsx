@@ -31,7 +31,7 @@ export function Hero() {
         className="absolute inset-0"
         style={{
           background: "var(--gradient-veil)",
-          opacity: (hero.overlayIntensity ?? 45) / 45,
+          opacity: (hero.overlayIntensity ?? 28) / 100,
         }}
       />
       <div className="grain-overlay absolute inset-0" />

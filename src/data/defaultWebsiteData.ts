@@ -29,7 +29,7 @@ export const defaultWebsiteData: WebsiteData = {
       zoom: 100,
       title: "Hero Background",
     },
-    overlayIntensity: 45,
+    overlayIntensity: 28,
     eyebrowText: "Eighteenth of August",
     mainTitle: "Happy Birthday, Jafu",
     quote: "To the girl who has been a part of my story since 6th standard.",

@@ -26,7 +26,7 @@ export function Finale() {
         className="absolute inset-0"
         style={{
           background: "var(--gradient-veil)",
-          opacity: (finale.overlayIntensity ?? 60) / 60,
+          opacity: (finale.overlayIntensity ?? 40) / 100,
         }}
       />
       <div className="grain-overlay absolute inset-0" />
