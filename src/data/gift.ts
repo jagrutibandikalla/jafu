@@ -49,53 +49,53 @@ export const chapters: {
   body: string;
   photos: Photo[];
 }[] = [
-    {
-      number: "Chapter 01",
-      title: "The Apartment Floor",
-      quote: "We didn't know we were making memories. We were just playing after school.",
-      body: "We lived on the same floor. Same staircase, same afternoon shadows, same routine of running out the door the moment homework was done. Half of my childhood memories are just you standing in them.",
-      photos: [
-        { src: childhood2, alt: "Same floor. Same afternoon.", shape: "portrait" },
-      ],
-    },
-    {
-      number: "Chapter 02",
-      title: "The School Years",
-      body: "School became the backdrop to everything. Walking together, sharing tiffins, stressing over exams that feel so small now, and laughing at things no one else found funny.",
-      photos: [{ src: school1, alt: "Corridor conversations", shape: "portrait" }],
-    },
-    {
-      number: "Chapter 03",
-      title: "The Growing Up Phase",
-      body: "Between school ending and college starting, everything was uncertain except for one thing: our evening catch-ups. We talked about big dreams, small fears, and everything in between.",
-      photos: [{ src: hostel1, alt: "Walking into the future together", shape: "landscape" }],
-    },
-    {
-      number: "Chapter 04",
-      title: "The Hostel Era",
-      body: "Those two years in the hostel — I don't think I'll ever have anything quite like that again. Sharing a space, staying up way past midnight, laughing until our stomachs hurt when we were supposed to be sleeping.",
-      photos: [{ src: recent2, alt: "Hostel days. The best two years.", shape: "portrait" }],
-    },
-    {
-      number: "Chapter 05",
-      title: "The Distance Phase",
-      body: "Now I'm in my final year, you're somewhere else, and our daily routines don't overlap the way they used to. Distance changed our location — it never touched our bond.",
-      photos: [{ src: recent1, alt: "Miles apart, but never distant.", shape: "square" }],
-    },
-    {
-      number: "Chapter 06",
-      title: "Where We Are Today",
-      body: "Looking back at all these chapters, I realize how much of my life has your presence woven through it. From 6th standard corridor games to final-year phone calls — you've been a constant in the best way possible.",
-      photos: [{ src: chapter6, alt: "To many more years of this.", shape: "portrait" }],
-    },
-  ];
+  {
+    number: "Chapter 01",
+    title: "The Apartment Floor",
+    quote: "We didn't know we were making memories. We were just playing after school.",
+    body: "We lived on the same floor. Same staircase, same afternoon shadows, same routine of running out the door the moment homework was done. Half of my childhood memories are just you standing in them.",
+    photos: [
+      { src: childhood2, alt: "Same floor. Same afternoon.", shape: "portrait" },
+    ],
+  },
+  {
+    number: "Chapter 02",
+    title: "The School Years",
+    body: "School became the backdrop to everything. Walking together, sharing tiffins, stressing over exams that feel so small now, and laughing at things no one else found funny.",
+    photos: [{ src: school1, alt: "Corridor conversations", shape: "portrait" }],
+  },
+  {
+    number: "Chapter 03",
+    title: "The Growing Up Phase",
+    body: "Between school ending and college starting, everything was uncertain except for one thing: our evening catch-ups. We talked about big dreams, small fears, and everything in between.",
+    photos: [{ src: hostel1, alt: "Walking into the future together", shape: "landscape" }],
+  },
+  {
+    number: "Chapter 04",
+    title: "The Hostel Era",
+    body: "Those two years in the hostel — I don't think I'll ever have anything quite like that again. Sharing a space, staying up way past midnight, laughing until our stomachs hurt when we were supposed to be sleeping.",
+    photos: [{ src: recent2, alt: "Hostel days. The best two years.", shape: "portrait" }],
+  },
+  {
+    number: "Chapter 05",
+    title: "The Distance Phase",
+    body: "Now I'm in my final year, you're somewhere else, and our daily routines don't overlap the way they used to. Distance changed our location — it never touched our bond.",
+    photos: [{ src: recent1, alt: "Miles apart, but never distant.", shape: "square" }],
+  },
+  {
+    number: "Chapter 06",
+    title: "Where We Are Today",
+    body: "Looking back at all these chapters, I realize how much of my life has your presence woven through it. From 6th standard corridor games to final-year phone calls — you've been a constant in the best way possible.",
+    photos: [{ src: chapter6, alt: "To many more years of this.", shape: "portrait" }],
+  },
+];
 
 /** Gallery — mix shapes freely, captions are optional. */
 export const gallery: Photo[] = [
   {
     src: childhood1,
     alt: "Jafu fixing her hair",
-    shape: "polaroid",
+    shape: "portrait",
     caption: "Same floor. Same afternoon. Endless games.",
     date: "6th Standard",
     note: "From 6th standard corridor games to forever.",
@@ -103,7 +103,7 @@ export const gallery: Photo[] = [
   {
     src: childhood2,
     alt: "Jafu fixing her hair",
-    shape: "polaroid",
+    shape: "portrait",
     caption: "The balcony where we solved all the world's problems.",
     date: "Childhood",
     note: "Living on the same floor made growing up so sweet.",
@@ -111,7 +111,7 @@ export const gallery: Photo[] = [
   {
     src: school1,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "polaroid",
+    shape: "landscape",
     caption: "Just another ordinary day that became a memory.",
     date: "School",
     note: "Even ordinary school days were bright with you.",
@@ -127,7 +127,7 @@ export const gallery: Photo[] = [
   {
     src: recent2,
     alt: "Jafu & Princy hugging closely",
-    shape: "polaroid",
+    shape: "square",
     caption: "Miles apart, but never distant.",
     date: "Present",
     note: "No matter how many miles apart, we pick up mid-sentence.",
@@ -135,7 +135,7 @@ export const gallery: Photo[] = [
   {
     src: littleThings,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "polaroid",
+    shape: "landscape",
     caption: "The little things that will always mean us.",
     date: "Always",
     note: "It's always the smallest moments that mean the most.",
@@ -143,7 +143,7 @@ export const gallery: Photo[] = [
   {
     src: recent1,
     alt: "Jafu & Princy dancing outdoors",
-    shape: "polaroid",
+    shape: "portrait",
     caption: "To the person who makes everything feel a little calmer.",
     date: "Today",
     note: "Your calm presence makes every heavy day lighter.",
@@ -151,7 +151,7 @@ export const gallery: Photo[] = [
   {
     src: gallery1,
     alt: "Jafu on a boat ride by the lake",
-    shape: "polaroid",
+    shape: "portrait",
     caption: "Boat rides, quiet water, and peaceful moments.",
     date: "Recent",
     note: "Peaceful water, gentle breeze, and good company.",
@@ -159,7 +159,7 @@ export const gallery: Photo[] = [
   {
     src: gallery2,
     alt: "Jafu smiling in lehenga outdoors",
-    shape: "polaroid",
+    shape: "portrait",
     caption: "Dressed up, glowing, and being her gorgeous self.",
     date: "Celebrations",
     note: "Dressed up for celebrations, glowing inside and out.",
@@ -167,7 +167,7 @@ export const gallery: Photo[] = [
   {
     src: gallery3,
     alt: "Warm tight hug in front of green bushes",
-    shape: "polaroid",
+    shape: "square",
     caption: "Hugs that make everything feel alright.",
     date: "Always",
     note: "A hug that makes you feel completely safe.",
