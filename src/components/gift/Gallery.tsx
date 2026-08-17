@@ -96,7 +96,7 @@ export function Gallery() {
                   )}
 
                   {p.caption && (
-                    <span className="font-script text-xl sm:text-2xl text-stone-800 dark:text-stone-100 leading-snug font-bold">
+                    <span className="font-script text-xl sm:text-2xl text-stone-800 dark:text-stone-100 leading-snug font-normal">
                       {p.caption}
                     </span>
                   )}
