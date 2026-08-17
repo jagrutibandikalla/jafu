@@ -10,6 +10,7 @@ import littleThings from "@/assets/memories/little-things/little-things.jpg";
 import letterArt from "@/assets/memories/letter/letter.jpg";
 import songArt from "@/assets/memories/music/song-art.jpg";
 import finale from "@/assets/memories/final/finale.jpg";
+import chapter6 from "@/assets/memories/long-distance/chapter-6.jpg";
 import gallery1 from "@/assets/memories/gallery/gallery-1.jpg";
 import gallery2 from "@/assets/memories/gallery/gallery-2.jpg";
 import gallery3 from "@/assets/memories/gallery/gallery-3.jpg";
@@ -237,7 +238,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-06-p1",
-          src: finale,
+          src: chapter6,
           alt: "Portrait of a calm young woman in warm light",
           shape: "portrait",
           fit: "cover",
