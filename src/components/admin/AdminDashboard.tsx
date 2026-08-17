@@ -81,7 +81,7 @@ export function AdminDashboard({ onClose }: { onClose?: () => void }) {
     image: ImageSettings;
     title: string;
     onSave: (updated: ImageSettings) => void;
-    onDelete?: () => void;
+    onDelete?: (() => void) | undefined;
   } | null>(null);
 
   // Memories Picker Modal State
@@ -116,7 +116,7 @@ export function AdminDashboard({ onClose }: { onClose?: () => void }) {
     image: ImageSettings,
     title: string,
     onSave: (updated: ImageSettings) => void,
-    onDelete?: () => void
+    onDelete?: (() => void) | undefined
   ) => {
     setEditingImage({ image, title, onSave, onDelete });
   };
@@ -540,11 +540,13 @@ export function AdminDashboard({ onClose }: { onClose?: () => void }) {
 
                         {chap.photos[0] && (
                           <button
-                            onClick={() =>
-                              openEditor(chap.photos[0], `Edit ${chap.number} Image`, (updated) =>
-                                updateChapterPhoto(chap.id, chap.photos[0].id, updated)
-                              )
-                            }
+                            onClick={() => {
+                              const photo = chap.photos[0];
+                              if (!photo) return;
+                              openEditor(photo, `Edit ${chap.number} Image`, (updated) =>
+                                updateChapterPhoto(chap.id, photo.id, updated)
+                              );
+                            }}
                             className="flex items-center justify-center gap-1.5 rounded-lg border border-stone-800 bg-stone-950 py-1.5 text-xs text-stone-400 hover:text-stone-200"
                           >
                             <Sliders className="h-3.5 w-3.5" />

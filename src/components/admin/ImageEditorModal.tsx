@@ -8,7 +8,7 @@ interface ImageEditorModalProps {
   onClose: () => void;
   image: ImageSettings;
   onSave: (updated: ImageSettings) => void;
-  onDelete?: () => void;
+  onDelete?: (() => void) | undefined;
   title?: string;
 }
 

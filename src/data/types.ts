@@ -9,6 +9,7 @@ export interface ImageSettings {
   date?: string;
   note?: string;
   title?: string;
+  category?: string;
   shape?: ImageShape;
   fit?: ImageFit;
   positionX?: number; // 0% to 100%, default 50%
@@ -50,8 +51,14 @@ export interface ChapterData {
   id: string;
   number: string; // e.g. "Chapter 01"
   title: string;
+  subtitle?: string;
+  period?: string;
+  leadText?: string;
+  body?: string;
+  bodyParagraphs?: string[];
+  pullQuote?: string;
+  accentNote?: string;
   quote?: string;
-  body: string;
   photos: ImageSettings[];
 }
 
@@ -96,7 +103,7 @@ export interface FinaleSectionData {
 }
 
 export interface ThingsILoveData {
-  image?: ImageSettings;
+  image?: ImageSettings | undefined;
   items: string[];
 }
 

@@ -60,6 +60,8 @@ interface WebsiteContextType {
     cardId: string,
     updates: Partial<LittleThingCardData>
   ) => void;
+  addLittleThingsCard: (card: LittleThingCardData) => void;
+  removeLittleThingsCard: (cardId: string) => void;
   updateMusic: (updates: Partial<WebsiteData["music"]>) => void;
   updateLetter: (updates: Partial<WebsiteData["letter"]>) => void;
   updateFinale: (updates: Partial<WebsiteData["finale"]>) => void;
@@ -270,7 +272,7 @@ export const WebsiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
         if (ch.id !== chapterId) return ch;
         const newPhotos = [...ch.photos];
         const [moved] = newPhotos.splice(fromIndex, 1);
-        newPhotos.splice(toIndex, 0, moved);
+        if (moved) newPhotos.splice(toIndex, 0, moved);
         return { ...ch, photos: newPhotos };
       }),
     }));
@@ -306,7 +308,7 @@ export const WebsiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
     updateDataState((prev) => {
       const newG = [...prev.gallery];
       const [moved] = newG.splice(fromIndex, 1);
-      newG.splice(toIndex, 0, moved);
+      if (moved) newG.splice(toIndex, 0, moved);
       return { ...prev, gallery: newG };
     });
   };
@@ -317,7 +319,7 @@ export const WebsiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
       thingsILove: {
         ...prev.thingsILove,
         items,
-        image: image || prev.thingsILove.image,
+        image: image !== undefined ? image : prev.thingsILove.image,
       },
     }));
   };
@@ -343,6 +345,26 @@ export const WebsiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
         cards: prev.littleThings.cards.map((c) =>
           c.id === cardId ? { ...c, ...updates } : c
         ),
+      },
+    }));
+  };
+
+  const addLittleThingsCard = (card: LittleThingCardData) => {
+    updateDataState((prev) => ({
+      ...prev,
+      littleThings: {
+        ...prev.littleThings,
+        cards: [...prev.littleThings.cards, card],
+      },
+    }));
+  };
+
+  const removeLittleThingsCard = (cardId: string) => {
+    updateDataState((prev) => ({
+      ...prev,
+      littleThings: {
+        ...prev.littleThings,
+        cards: prev.littleThings.cards.filter((c) => c.id !== cardId),
       },
     }));
   };
@@ -443,6 +465,8 @@ export const WebsiteDataProvider: React.FC<{ children: React.ReactNode }> = ({
         updateThingsILove,
         updateLittleThingsHero,
         updateLittleThingsCard,
+        addLittleThingsCard,
+        removeLittleThingsCard,
         updateMusic,
         updateLetter,
         updateFinale,
@@ -479,6 +503,8 @@ export const useWebsiteData = () => {
       updateThingsILove: () => {},
       updateLittleThingsHero: () => {},
       updateLittleThingsCard: () => {},
+      addLittleThingsCard: () => {},
+      removeLittleThingsCard: () => {},
       updateMusic: () => {},
       updateLetter: () => {},
       updateFinale: () => {},

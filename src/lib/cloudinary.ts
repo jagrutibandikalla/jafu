@@ -1,5 +1,5 @@
-const CLOUD_NAME = import.meta.env.VITE_CLOUDINARY_CLOUD_NAME || "o7ldnt8a";
-const UPLOAD_PRESET = import.meta.env.VITE_CLOUDINARY_UPLOAD_PRESET || "jafu_uploads";
+const CLOUD_NAME = import.meta.env["VITE_CLOUDINARY_CLOUD_NAME"] || "o7ldnt8a";
+const UPLOAD_PRESET = import.meta.env["VITE_CLOUDINARY_UPLOAD_PRESET"] || "jafu_uploads";
 
 export interface CloudinaryUploadResult {
   secureUrl: string;

@@ -10,6 +10,9 @@ import littleThings from "@/assets/memories/little-things/little-things.jpg";
 import letterArt from "@/assets/memories/letter/letter.jpg";
 import songArt from "@/assets/memories/music/song-art.jpg";
 import finale from "@/assets/memories/final/finale.jpg";
+import gallery1 from "@/assets/memories/gallery/gallery-1.jpg";
+import gallery2 from "@/assets/memories/gallery/gallery-2.jpg";
+import gallery3 from "@/assets/memories/gallery/gallery-3.jpg";
 import { WebsiteData } from "./types";
 
 export const defaultWebsiteData: WebsiteData = {
@@ -94,8 +97,8 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-01-p1",
-          src: childhood1,
-          alt: "Two little girls playing on an apartment floor",
+          src: childhood2,
+          alt: "Jafu making a birthday wish",
           shape: "portrait",
           fit: "cover",
           positionX: 50,
@@ -123,7 +126,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-02-p1",
-          src: childhood2,
+          src: school1,
           alt: "Warm apartment stairwell in afternoon light",
           shape: "portrait",
           fit: "cover",
@@ -151,7 +154,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-03-p1",
-          src: school1,
+          src: hostel1,
           alt: "Two schoolgirls walking down a sunlit corridor",
           shape: "landscape",
           fit: "cover",
@@ -179,7 +182,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-04-p1",
-          src: hostel1,
+          src: recent2,
           alt: "Cozy hostel room at night with fairy lights",
           shape: "landscape",
           fit: "cover",
@@ -207,7 +210,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-05-p1",
-          src: recent2,
+          src: recent1,
           alt: "Two friends holding coffee cups by a window",
           shape: "square",
           fit: "cover",
@@ -234,7 +237,7 @@ export const defaultWebsiteData: WebsiteData = {
       photos: [
         {
           id: "chap-06-p1",
-          src: recent1,
+          src: finale,
           alt: "Portrait of a calm young woman in warm light",
           shape: "portrait",
           fit: "cover",
@@ -341,6 +344,45 @@ export const defaultWebsiteData: WebsiteData = {
       caption: "To the person who makes everything feel a little calmer.",
       date: "Today",
       category: "Recent",
+    },
+    {
+      id: "gal-8",
+      src: gallery1,
+      alt: "Jafu on a boat ride by the lake",
+      shape: "portrait",
+      fit: "cover",
+      positionX: 50,
+      positionY: 50,
+      zoom: 100,
+      caption: "Boat rides, quiet water, and peaceful moments.",
+      date: "Recent",
+      category: "Recent",
+    },
+    {
+      id: "gal-9",
+      src: gallery2,
+      alt: "Jafu smiling in lehenga outdoors",
+      shape: "portrait",
+      fit: "cover",
+      positionX: 50,
+      positionY: 50,
+      zoom: 100,
+      caption: "Dressed up, glowing, and being her gorgeous self.",
+      date: "Celebrations",
+      category: "Favorites",
+    },
+    {
+      id: "gal-10",
+      src: gallery3,
+      alt: "Warm tight hug in front of green bushes",
+      shape: "square",
+      fit: "cover",
+      positionX: 50,
+      positionY: 50,
+      zoom: 100,
+      caption: "Hugs that make everything feel alright.",
+      date: "Always",
+      category: "Favorites",
     },
   ],
 
