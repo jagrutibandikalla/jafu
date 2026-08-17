@@ -198,12 +198,12 @@ export function AudioProvider({ children }: { children: React.ReactNode }) {
 
       {/* Floating Autoplay Tap Pill if Autoplay was blocked */}
       {isAutoplayBlocked && !isPlaying && (
-        <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-[99990] flex items-center justify-center">
+        <div className="fixed bottom-6 right-6 z-[99990] flex items-center">
           <button
             onClick={() => playSoftly()}
-            className="group flex items-center gap-3 rounded-full bg-amber-950/90 text-amber-100 px-6 py-3.5 text-xs font-medium tracking-[0.25em] uppercase shadow-2xl backdrop-blur-md border border-amber-500/40 transition-all duration-300 hover:scale-105 hover:bg-amber-900"
+            className="group flex items-center gap-3 rounded-full bg-[#3B171E]/90 text-[#F5E6D3] px-5 py-3 text-xs font-medium tracking-[0.22em] uppercase shadow-[0_8px_30px_rgba(0,0,0,0.3)] backdrop-blur-md border border-[#D4AF37]/40 transition-all duration-300 hover:scale-105 hover:bg-[#4A1D27] hover:border-[#D4AF37]/70"
           >
-            <span className="animate-pulse text-amber-400">♫</span>
+            <span className="animate-pulse text-[#E6C687] text-sm">♫</span>
             <span>Tap to begin our song</span>
           </button>
         </div>
