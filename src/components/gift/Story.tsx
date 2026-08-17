@@ -55,7 +55,7 @@ function ChapterItem({ chapter, index }: { chapter: ChapterData; index: number }
         </Reveal>
       </div>
 
-      <div className={`md:col-span-6 ${flip ? "md:order-1 md:col-start-1" : "md:col-start-7"} space-y-6`}>
+      <div className={`md:col-span-6 ${flip ? "md:order-1 md:col-start-1" : "md:col-start-7"} space-y-6 md:sticky md:top-28 md:self-start`}>
         {chapter.photos.map((p) => (
           <Reveal key={p.id} y={44}>
             <div className="relative overflow-hidden" style={{ boxShadow: "var(--shadow-soft)" }}>
